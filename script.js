@@ -27,14 +27,29 @@ function populateTable(data) {
 
   data.forEach(row => {
     const tr = document.createElement("tr");
+
     row.forEach(cell => {
       const td = document.createElement("td");
-      td.textContent = cell;
+
+      // Kiểm tra nếu cell chứa "Ticket#"
+      if (typeof cell === "string" && cell.startsWith("Ticket#")) {
+        const ticketId = cell.split("#")[1]; // Lấy phần số sau Ticket#
+        const link = document.createElement("a");
+        link.textContent = cell; // Giữ nguyên hiển thị
+        link.href = `https://crm.fastboy.dev/tickets/detail/${ticketId}`; // Tạo hyperlink
+        link.target = "_blank"; // Mở link trong tab mới
+        td.appendChild(link); // Gắn hyperlink vào ô
+      } else {
+        td.textContent = cell; // Nếu không phải "Ticket#", hiển thị nội dung thông thường
+      }
+
       tr.appendChild(td);
     });
+
     tableBody.appendChild(tr);
   });
 }
+
 
 function startLoader() {
   const loader = document.getElementById("loader");
