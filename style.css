@@ -48,7 +48,7 @@ table {
     overflow: hidden;
     border: 1.5px solid #b14a05;
     padding: 5px;
-    font-size: calc(4px,0.3rem,1vw);
+    font-size: clamp(4px,0.3rem,1vw);
   }
   
   table thead {
@@ -142,11 +142,12 @@ table {
 .search-bar {
     padding: 10px;
     font-size: 16px;
-    width: 300px;
+    width: clamp(200px;50vw;400px);
 }
 
 .search-btn {
-    padding: 10px 20px;
+    width: auto;
+    height: 20px;
     font-size: 16px;
     cursor: pointer;
 }
