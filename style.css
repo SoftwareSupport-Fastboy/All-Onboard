@@ -4,7 +4,7 @@ html, body {
     padding: 0;
     margin: 0;
     font-family: Arial, sans-serif;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1px;
     background-color: #f4f4f4;
     color: black;
     display: flex;
