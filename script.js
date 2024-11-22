@@ -11,15 +11,24 @@ async function fetchData() {
     const data = await response.json();
 
     if (Array.isArray(data) && data.length > 0) {
-      allData = data; // Store the data globally
+      allData = data; // Lưu dữ liệu vào biến toàn cục
+      
+      // Cập nhật tổng số hàng vào phần tử HTML
+      document.getElementById("total-row-whole-sheet").textContent = `Tổng số ID: ${data.length}`;
     } else {
       console.error("No data found.");
-      document.getElementById("tableBody").innerHTML = "<tr><td colspan='9'>No data available.</td></tr>";
+      
+      // Nếu không có dữ liệu, đặt tổng số hàng thành 0
+      document.getElementById("total-row-whole-sheet").textContent = "Tổng số ID: 0";
     }
   } catch (error) {
     console.error("Error fetching data:", error);
+    
+    // Trong trường hợp lỗi, đặt tổng số hàng thành 0
+    document.getElementById("total-row-whole-sheet").textContent = "Tổng số ID: 0";
   }
 }
+
 
 function populateTable(data) {
   const tableBody = document.getElementById("tableBody");
