@@ -9,6 +9,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 13px;
 }
 
 body {
@@ -19,6 +20,7 @@ body {
 h1 {
     text-align: center;
     width: 100%;
+    font-size: 2rem;
 }
 
 .container {
@@ -45,6 +47,7 @@ table {
     overflow: hidden;
     border: 1.5px solid #b14a05;
     padding: 5px;
+    font-size: calc(0.5rem,1rem,2vw);
   }
   
   table thead {
