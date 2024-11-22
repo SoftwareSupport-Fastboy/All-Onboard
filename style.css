@@ -18,10 +18,11 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
+.tatcaonboard {
   text-align: center;
-  width: 100%;
+  width: auto;
   font-size: 2rem;
+  font-weight: bold;
   color: #b14a05;
 }
 
@@ -195,6 +196,11 @@ a {
   text-decoration: none
 }
 
-button.gotogooglesheet {position: fixed;left:0; top:0}
-
 .gotogooglesheet a {box-shadow: none}
+
+header {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
