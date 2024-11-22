@@ -3,7 +3,8 @@ html, body {
     height: 100vh;
     padding: 0;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     background-color: #f4f4f4;
     color: black;
     display: flex;
