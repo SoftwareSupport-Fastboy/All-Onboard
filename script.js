@@ -1,7 +1,7 @@
 // Global variable to store the data
 let allData = [];
 let countdownTimer;
-let countdownValue = 10;
+let countdownValue = 9;
 
 const API_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=rYdPYHnZO0K4quvKCk-rPtPTbil_h5JO0SMYsGnUVZbCu0uw-xqv3d955W07XHSPEsrPeMm9cjNznYML0UjhQoQL-xPG5GWYm5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnPnxmQEFzp4mHjR31VNMmQnI7V7nzLaplU5-VycdK-MfsO26v7535yDU98-P9oQ1v47qjhsbNZmGkLWLxVOm0MOV-mPxIk_Kd9z9Jw9Md8uu&lib=M0lsbAYAVLnIBkgppLjA8AAZORf4TutOS";
 
