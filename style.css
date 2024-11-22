@@ -3,7 +3,8 @@ html, body {
     height: 100vh;
     padding: 0;
     margin: 0;
-    letter-spacing: 0.5em;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.5px;
     background-color: #f4f4f4;
     color: black;
     display: flex;
