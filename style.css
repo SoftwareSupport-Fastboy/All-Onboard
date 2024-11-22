@@ -47,7 +47,7 @@ table {
     overflow: hidden;
     border: 1.5px solid #b14a05;
     padding: 5px;
-    font-size: calc(5px,0.5rem,1.5vw);
+    font-size: calc(4px,0.3rem,1.2vw);
   }
   
   table thead {
