@@ -14,18 +14,18 @@ async function fetchData() {
       allData = data; // Lưu dữ liệu vào biến toàn cục
       
       // Cập nhật tổng số hàng vào phần tử HTML
-      document.getElementById("total-row-whole-sheet").textContent = `Tổng số ID: ${data.length}`;
+      document.getElementById("total-row-whole-sheet").textContent = `Tổng số onboard: ${data.length}`;
     } else {
       console.error("No data found.");
       
       // Nếu không có dữ liệu, đặt tổng số hàng thành 0
-      document.getElementById("total-row-whole-sheet").textContent = "Tổng số ID: 0";
+      document.getElementById("total-row-whole-sheet").textContent = "Tổng số onboard: 0";
     }
   } catch (error) {
     console.error("Error fetching data:", error);
     
     // Trong trường hợp lỗi, đặt tổng số hàng thành 0
-    document.getElementById("total-row-whole-sheet").textContent = "Tổng số ID: 0";
+    document.getElementById("total-row-whole-sheet").textContent = "Tổng số onboard: (không lấy được dữ liệu, hãy refresh lại)";
   }
 }
 
