@@ -208,13 +208,11 @@ header {
 .details_container {
   width: 100%;
   height: auto;
-  padding-inline: 5px;
-  
-  
-  
-  
 }
   
+.details_container>* {
+  margin-inline: 10px;
+}
   
   
   
