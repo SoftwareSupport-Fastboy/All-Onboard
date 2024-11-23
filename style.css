@@ -111,14 +111,14 @@ a {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease;
-  user-select:none;
-  pointer-events: none;
 }
 
 .loader>*{
   position: absolute;
   color: white;
   font-size: 2rem;
+  user-select:none;
+  pointer-events: none;
 }
 
 .loader.hidden {
