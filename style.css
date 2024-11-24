@@ -19,6 +19,11 @@ body {
   background-color: #f4f4f4;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
 .tatcaonboard {
   text-align: center;
   width: auto;
