@@ -4,10 +4,9 @@ self.addEventListener('install', (event) => {
             return cache.addAll([
                 '/',
                 '/index.html',
-                '/styles.css',
+                '/style.css',
                 '/script.js',
-                '/style-darkmode.css',
-                '/toggle-switches.css',
+                '/toggle.css',
                 '/manifest.json',            
             ]);
         })
