@@ -24,6 +24,8 @@ body.dark-mode {
   color: white;
 }
 
+body.dark-mode input {color: white;background: #121212;}
+
 .tatcaonboard {
   text-align: center;
   width: auto;
