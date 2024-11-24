@@ -114,10 +114,33 @@ document.getElementById("searchInput").addEventListener("keydown", function (e) 
   });
   
 
+//function searchTable(query) {
+  //const filteredData = allData.filter(row => {
+    //return row.some(cell => String(cell).toLowerCase().includes(query.toLowerCase()));
+  //});
+
+  //populateTable(filteredData);}
+
+
 function searchTable(query) {
   const filteredData = allData.filter(row => {
     return row.some(cell => String(cell).toLowerCase().includes(query.toLowerCase()));
   });
 
-  populateTable(filteredData);
+  if (filteredData.length > 0) {
+    populateTable(filteredData); // Populate table with filtered data
+  } else {
+    // Display "không tìm thấy" if no results are found
+    const tableBody = document.getElementById("tableBody");
+    tableBody.innerHTML = ""; // Clear previous table data
+
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.textContent = "Không tìm thấy"; // Message to display
+    td.colSpan = allData[0] ? allData[0].length : 1; // Span across all columns
+    td.style.textAlign = "center"; // Center the message
+
+    tr.appendChild(td);
+    tableBody.appendChild(tr);
+  }
 }
