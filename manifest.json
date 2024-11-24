@@ -1,6 +1,6 @@
 {
-    "name": "Tất cả Onboard",
-    "short_name": "All Onboard",
+    "name": "Total Onboard",
+    "short_name": "Total Onboard",
     "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
