@@ -1,6 +1,6 @@
 /* From Uiverse.io by Galahhad */ 
 .theme-switch {
-    --toggle-size: 5px;
+    --toggle-size: 15px;
     
     /* the size is adjusted using font-size,
        this is not transform scale,
