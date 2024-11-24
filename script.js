@@ -1,3 +1,16 @@
+// đăng ký the service worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch((error) => {
+            console.log('Service Worker registration failed:', error);
+        });
+    });
+}
+
+
+
 // Global variable to store the data
 let allData = [];
 let countdownTimer;
