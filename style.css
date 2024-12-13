@@ -292,3 +292,16 @@ summary {
   line-height: 2;
   font-size: 1.2rem;
 }
+
+#gap-loi-loading {
+  visibility: hidden;
+  text-align: center;
+  font-size: 5rem;
+  background-color: white;
+  color: red;
+  font-weight: bold;
+  padding: 100px;
+  border-radius: 30px;
+  border: 2px solid red;
+
+}
