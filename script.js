@@ -12,6 +12,7 @@ if ('serviceWorker' in navigator) {
 
 
 // Global variable to store the data
+// Global variable to store the data
 let allData = [];
 let countdownTimer;
 let countdownValue = 9;
@@ -20,27 +21,44 @@ const API_URL = "https://script.googleusercontent.com/macros/echo?user_content_k
 
 async function fetchData() {
   try {
+    const loader = document.getElementById("loader");
+    const gaploi_loading = document.getElementById("gap-loi-loading");
+
+    // Set a timeout to trigger if loading takes more than 20 seconds
+    const timeout = setTimeout(() => {
+      gaploi_loading.style.visibility = "visible";
+    }, 20000); // 20 seconds
+
     const response = await fetch(API_URL);
     const data = await response.json();
+    loader.style.display = "flex"; // Show the loader
 
     if (Array.isArray(data) && data.length > 0) {
-      allData = data; // Lưu dữ liệu vào biến toàn cục
+      allData = data; // Store the data in a global variable
       
-      // Cập nhật tổng số hàng vào phần tử HTML
+      // Update total rows in the HTML
       document.getElementById("total-row-whole-sheet").textContent = `Tổng số onboard: ${data.length}`;
+      loader.style.display = "none"; // Hide the loader
+      clearTimeout(timeout); // Clear the timeout since data has been fetched
     } else {
       console.error("No data found.");
       
-      // Nếu không có dữ liệu, đặt tổng số hàng thành 0
+      // If no data, set total rows to 0
       document.getElementById("total-row-whole-sheet").textContent = "Tổng số onboard: 0";
+      loader.style.display = "none"; // Hide the loader
+      clearTimeout(timeout); // Clear the timeout since data has been fetched
     }
   } catch (error) {
     console.error("Error fetching data:", error);
     
-    // Trong trường hợp lỗi, đặt tổng số hàng thành 0
+    const gaploi_loading = document.getElementById("gap-loi-loading");
+    gaploi_loading.style.visibility = "visible";
+    
+    // If an error occurs, set total rows to an error message
     document.getElementById("total-row-whole-sheet").textContent = "Tổng số onboard: (không lấy được dữ liệu, hãy refresh lại)";
   }
 }
+
 
 
 function populateTable(data) {
@@ -73,29 +91,27 @@ function populateTable(data) {
 }
 
 
-function startLoader() {
-  const loader = document.getElementById("loader");
-  const countdownElement = document.getElementById("countdown");
+// function startLoader() {
+//   const countdownElement = document.getElementById("countdown");
 
-  loader.style.display = "flex"; // Show the loader
 
-  countdownTimer = setInterval(() => {
-    if (countdownValue > 0) {
-      countdownElement.textContent = countdownValue--; // Decrement countdown
-    } else {
-      clearInterval(countdownTimer); // Stop countdown when it reaches 0
-    }
-  }, 1000); // Update countdown every second
-}
+//   countdownTimer = setInterval(() => {
+//     if (countdownValue > 0) {
+//       countdownElement.textContent = countdownValue--; // Decrement countdown
+//     } else {
+//       clearInterval(countdownTimer); // Stop countdown when it reaches 0
+//     }
+//   }, 1000); // Update countdown every second
+// }
 
-function stopLoader() {
-  clearInterval(countdownTimer); // Stop the countdown timer
-  document.getElementById("loader").style.display = "none"; // Hide the loader
-}
+// function stopLoader() {
+//   clearInterval(countdownTimer); // Stop the countdown timer
+//   document.getElementById("loader").style.display = "none"; // Hide the loader
+// }
 
 // Call startLoader when window loads or before fetching data
 window.onload = function() {
-  startLoader(); // Start loader and countdown on window load
+  // startLoader(); // Start loader and countdown on window load
   fetchData();    // Fetch data in the background
   setTimeout(stopLoader, 10000); // Stop loader after 15 seconds
 };
