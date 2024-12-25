@@ -249,6 +249,8 @@ data.forEach(item => {
         }
         dropdown.style.display = 'none'; // Hide dropdown
         searchTable(searchInput.value); // Trigger search with the updated value
+        const cancelButton = document.querySelector('.cancel-button');
+        cancelButton.style.display = 'flex';
     });
     dropdown.appendChild(div);
 });
