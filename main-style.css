@@ -335,7 +335,7 @@ li:hover label > * {color: white;}
 .url-trigger-button {width: 50%;}
 
 .url-trigger-button::after {
-    content: 'Trigger';
+    content: 'Trigger (Ctrl + Enter)';
 }
 
 .Personal-Board-Button:active, .url-trigger-button:active {
